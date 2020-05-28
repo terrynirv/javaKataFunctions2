@@ -5,22 +5,19 @@ console.log(add(6, 7))
 console.log(add(6, 6))
 function multiply(x, y) {
     let stack = 0
-
-    for (let i = 0; i < y; i++ ){
-    stack = add(stack, x);
-
-
-    
+    let inc = 1
+    for (let i = 0; i < y; i = add(i, inc) ){
+    stack = add(stack, x);    
     }
-    return stack
-    
+    return stack   
 
 }
 console.log(multiply(3, 4))
 console.log(multiply(7, 1))
 function power(x, n) {
     let stack1 = 1
-    for (let i = 0; i < n; i++){
+    let inc = 1
+    for (let i = 0; i < n; i = add(i, inc)){
         stack1 = multiply(stack1, x)
     }
         return stack1
@@ -28,15 +25,13 @@ function power(x, n) {
 console.log(power(3, 4))
 console.log(power(10, 5))
 function facorital(x) {
-   
-    let stack2 = 0
-    let fac = 1
-    for (let i = x; i = fac; i--) {
-        
-        stack2 = multiply(x, i)
-        
-        
-    }
+    let stack2 = 1;
+    let inc = 1;
+    
+    for (let i = 2; i <= x; i = add(i, inc))
+        stack2 = multiply(stack2, i)
     return stack2
 }
 console.log(facorital(5))
+console.log(facorital(4))
+console.log(facorital(3))
